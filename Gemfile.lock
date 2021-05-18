@@ -12,7 +12,6 @@ GEM
     faraday-net_http_persistent (1.1.0)
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
-    hash_dig_and_collect (0.0.1)
     multipart-post (2.1.1)
     ruby2_keywords (0.0.4)
 
@@ -22,7 +21,6 @@ PLATFORMS
 DEPENDENCIES
   faraday
   faraday_middleware
-  hash_dig_and_collect
 
 BUNDLED WITH
    2.2.15
