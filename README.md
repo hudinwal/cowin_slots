@@ -12,5 +12,3 @@ Steps
 
 
 What happens when slot is found : Script speaks out 'Hi! Vaccine is available' once it finds some slots
-
-Todo: Use OptionParser for script arguments
