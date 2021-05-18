@@ -1,10 +1,11 @@
 require_relative 'get_vaccine_centers.rb'
 require_relative 'vaccine_available_in_centers.rb'
 
-def loop_to_check_vaccine(days, pincode, age, type)
+def loop_to_check_vaccine(pincode, age, type)
     10000.times do |n|
         puts("Attempt ##{n+1}")
-        available = check_availability_for_next_days(days, pincode, age, type)
+        today = Date.today 
+        available = check_availability_for_date(today, pincode, age, type)
         if available 
             notify
         end
@@ -15,20 +16,6 @@ end
 
 def notify
     `say "Hi! Vaccine is Available!"`
-end
-
-# 0 days check for today, 1 days check for today and tomorrow
-def check_availability_for_next_days(days, pincode, age, type)
-    today = Date.today 
-    (0..days-1).each do |n|
-        date = today + n
-        available = check_availability_for_date(date, pincode, age, type)
-        if available
-            return available
-            break
-        end
-    end
-    return false
 end
 
 def check_availability_for_date(date, pincode, age, type)

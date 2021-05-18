@@ -16,11 +16,10 @@ end.parse!
 pincode =  options[:pincode]
 min_age = options[:min_age]
 type = options[:type]
-days_to_check = 2 # 1 is today, 2 is today and tomorrow and so on
 
 if pincode.nil? or min_age.nil? or type.nil?
     puts "Required options is/are missing. Please check help."
     exit
 end
 
-puts(loop_to_check_vaccine(days_to_check, pincode, min_age, type))
+puts(loop_to_check_vaccine(pincode, min_age, type))
