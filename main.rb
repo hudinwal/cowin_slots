@@ -15,7 +15,7 @@ end
 # 0 days check for today, 1 days check for today and tomorrow
 def check_availability_for_next_days(days, pincode, age, type)
     today = Date.today 
-    (1..days).each do |n|
+    (0..days-1).each do |n|
         date = today + n
         available = check_availability_for_date(date, pincode, age, type)
         if available
@@ -42,4 +42,10 @@ def check_availability_for_date(date, pincode, age, type)
     result.count > 0
 end
 
-puts(loop_to_check_vaccine(2, 301001, 18, "Free"))
+# TODO use OptionParser
+pincode =  Integer(ARGV[0])
+min_age = Integer(ARGV[1])
+type = ARGV[2] # types can be "Free" or "Paid"
+days_to_check = 2
+
+puts(loop_to_check_vaccine(days_to_check, pincode, min_age, type))
