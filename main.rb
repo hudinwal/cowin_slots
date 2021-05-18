@@ -17,8 +17,8 @@ pincode =  options[:pincode]
 min_age = options[:min_age]
 type = options[:type]
 
-if pincode.nil? or min_age.nil? or type.nil?
-    puts "Required options is/are missing. Please check help."
+if pincode.nil? or min_age.nil? or type.nil? or !(type == "Free" or type == "Paid")
+    puts "Required options missing or incorrect. Please check help."
     exit
 end
 
