@@ -6,12 +6,17 @@ def loop_to_check_vaccine(days, pincode, age, type)
         puts("Attempt ##{n+1}")
         available = check_availability_for_next_days(days, pincode, age, type)
         if available 
-            `say "Hi! Vaccine is Available!"`
+            notify
         end
         sleep 5
     end
     return false
 end
+
+def notify
+    `say "Hi! Vaccine is Available!"`
+end
+
 # 0 days check for today, 1 days check for today and tomorrow
 def check_availability_for_next_days(days, pincode, age, type)
     today = Date.today 
@@ -46,6 +51,6 @@ end
 pincode =  Integer(ARGV[0])
 min_age = Integer(ARGV[1])
 type = ARGV[2] # types can be "Free" or "Paid"
-days_to_check = 2
+days_to_check = 2 # 1 is today, 2 is today and tomorrow and so on
 
 puts(loop_to_check_vaccine(days_to_check, pincode, min_age, type))
