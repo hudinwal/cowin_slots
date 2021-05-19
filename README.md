@@ -1,8 +1,7 @@
 Ruby script that polls cowin server to notify availablity of vaccines.
 
 Enviorment: 
-1. MacOS
-2. `Bundler`, to install do `gem install bundler`. Details at https://bundler.io
+`Bundler`, to install do `gem install bundler`. Details at https://bundler.io
 
 Steps
 1. Clone repo
